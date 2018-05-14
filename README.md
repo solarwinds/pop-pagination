@@ -13,7 +13,7 @@ and pass it into a list function in order to know what `created_at` point the la
 ended at:
 
 ```go
-	cursor, err := pagination.GetCursor(ctx, dataAccessor, token)
+	cursor, err := pagination.GetCursor(context.Background(), dataAccessor, token)
 	if err != nil {
 		return nil, "", err
 	}
