@@ -4,11 +4,11 @@ import (
 	"time"
 	"github.com/gobuffalo/uuid"
 	"encoding/json"
-	"fmt"
 	"github.com/gobuffalo/pop"
 	"crypto/rand"
 	"github.com/gobuffalo/validate"
 	"github.com/gobuffalo/validate/validators"
+	"encoding/base64"
 )
 
 type PageToken struct {
@@ -37,7 +37,7 @@ func NewPageToken(cursor time.Time) *PageToken {
 func createTokenString() string {
 	b := make([]byte, 8)
 	rand.Read(b)
-	return fmt.Sprintf("%x", b)
+	return base64.RawURLEncoding.EncodeToString(b)
 }
 
 // PageTokens is not required by pop and may be deleted
