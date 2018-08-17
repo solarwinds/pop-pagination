@@ -23,9 +23,6 @@ ended at:
 	}
 ```
 
-Full examples may be found in the [beacon-people](https://github.com/solarwinds/beacon-people/blob/94838a9185f196d93dec7d0f225727d03c6484a6/peopleservice/user_service.go#L28)
-repo.
-
 ## How
 When using the pagination library it is necessary to do a few things up front:
 1. Utilize the sample migration to create the backing database table necessary for page tokens to be stored
